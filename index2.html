@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topkapi Cafe - Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: url('./background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #2e3d2f;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: rgba(28, 77, 63, 0.7);
+            color: white;
+            text-align: center;
+            padding: 1rem 1rem;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }   
+
+        #logo {
+            width: 200px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 20px white;
+            margin-bottom: 1rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        .sticky-nav {
+            background-color: rgba(22, 62, 50, 0.9);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            overflow-x: auto;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            overflow-x: auto;
+            white-space: nowrap;
+            gap: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .nav-links::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+
+        .nav-links li {
+            flex: 0 0 auto;
+        }
+
+        .nav-links a {
+            color: #fdfaf5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #e0e8de;
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            background-color: rgba(252, 243, 228, 0.85);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-section {
+            margin-bottom: 3rem;
+            display: none;
+        }
+
+        .menu-section.active {
+            display: block;
+        }
+
+        .menu-section h2 {
+            color: #1c4d3f;
+            border-bottom: 2px solid #c8d5cc;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .menu-item {
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-names {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 0rem;
+            flex-wrap: wrap;
+        }
+
+        .item-name-en,
+        .item-name-ar {
+            flex: 1;
+            font-weight: bold;
+            color: #1c4d3f;
+            font-size: 1rem;
+        }
+
+        .item-name-en {
+            text-align: left;
+        }
+
+        .item-name-ar {
+            text-align: right;
+            direction: rtl;
+            font-size: 1.2rem;
+        }
+
+        .item-price {
+            text-align: center;
+            font-size: 1rem;
+              flex: 1;
+            font-weight: bold;
+            color: #1c4d3f;
+        }
+
+        .footer {
+            background-color: rgba(28, 77, 63, 0.9);
+            color: #e0e8de;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-icons {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            color: #fdfaf5;
+            font-size: 1.3rem;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            color: #d0e7d2;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .menu-item {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                grid-template-areas: 
+                    "en price"
+                    "ar price"
+                    "desc desc";
+                gap: 0.5rem;
+            }
+
+            .item-name-en { grid-area: en; }
+            .item-name-ar {
+                grid-area: ar;
+                text-align: left;
+                direction: ltr;
+            }
+            .item-price { grid-area: price; }
+            .item-description { grid-area: desc; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="overlay">
+            <div class="logo-wrapper">
+                <img id="logo" src="./logo.jpg" alt="Topkapi Logo">
+                <h1>topkapi Cafe</h1>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/123456789"><i class="fab fa-whatsapp"></i></a>
+                    <a href="tel:+123456789"><i class="fas fa-phone"></i></a>
+                    <a href="https://maps.google.com?q=Topkapi+Cafe"><i class="fas fa-map-pin"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#coffee" class="nav-link active" data-section="coffee">Coffee</a></li>
+                <li><a href="#tea" class="nav-link" data-section="tea">Tea</a></li>
+                <li><a href="#breakfast" class="nav-link" data-section="breakfast">Breakfast</a></li>
+                <li><a href="#lunch" class="nav-link" data-section="lunch">Lunch</a></li>
+                <li><a href="#desserts" class="nav-link" data-section="desserts">Desserts</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="coffee" class="menu-section active">
+            <h2>Coffee & Espresso</h2>
+                
+        <div class="menu-item">
+            <div class="item-name">
+                <div class="item-name-en">Tea</div>
+                <div class="item-name-ar">شاي</div>
+            </div>
+            <div class="item-price">35.00</div>
+        </div>
+        
+        <div class="menu-item">
+            <div class="item-name">
+                <div class="item-name-en">Turkish Coffee</div>
+                <div class="item-name-ar">قهوة تركي</div>
+            </div>
+            <div class="item-price">45.00</div>
+        </div>
+        
+        <div class="menu-item">
+            <div class="item-name">
+                <div class="item-name-en">Green Tea</div>
+                <div class="item-name-ar">شاي اخضر</div>
+            </div>
+            <div class="item-price">40.00</div>
+        </div>
+        
+        <div class="menu-item">
+            <div class="item-name">
+                <div class="item-name-en">Turkish Coffee (D)</div>
+                <div class="item-name-ar">قهوة تركية دبل</div>
+            </div>
+            <div class="item-price">55.00</div>
+        </div>
+        
+        <div class="menu-item">
+            <div class="item-name">
+                <div class="item-name-en">Tea with Milk</div>
+                <div class="item-name-ar">شاي بالحليب</div>
+            </div>
+            <div class="item-price">55.00</div>
+        </div>
+        
+        <div class="menu-item">
+            <div class="item-name">
+                <div class="item-name-en">French Coffee</div>
+                <div class="item-name-ar">قهوة فرنساوي</div>
+            </div>
+            <div class="item-price">65.00</div>
+        </div>
+        
+        <div class="menu-item">
+            <div class="item-name">
+                <div class="item-name-en">Tea with Flavors</div>
+                <div class="item-name-ar">شاي بنكهات</div>
+            </div>
+            <div class="item-price">45.00</div>
+        </div>
+        
+        <div class="menu-item">
+            <div class="item-name">
+                <div class="item-name-en">Hazelnut Coffee</div>
+                <div class="item-name-ar">قهوة بندق</div>
+            </div>
+            <div class="item-price">65.00</div>
+        </div>
+        
+        <div class="menu-item">
+            <div class="item-name">
+                <div class="item-name-en">Pot Tea</div>
+                <div class="item-name-ar">براد شاي</div>
+            </div>
+            <div class="item-price">65.00</div>
+        </div>
+    </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const menuSections = document.querySelectorAll('.menu-section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const sectionToShow = this.getAttribute('data-section');
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    menuSections.forEach(section => section.classList.remove('active'));
+                    this.classList.add('active');
+                    document.getElementById(sectionToShow).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
