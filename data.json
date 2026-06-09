@@ -1,0 +1,201 @@
+{
+  "menu": [
+    {
+      "id": "hot-drinks",
+      "category_en": "Hot Drinks",
+      "category_ar": "مشروبات ساخنة",
+      "items": [
+        { "name_en": "Tea", "name_ar": "شاي", "img": "1.jfif", "price": "40.00" },
+        { "name_en": "Green Tea", "name_ar": "شاي اخضر", "img": "2.jfif", "price": "50.00" },
+        { "name_en": "Tea with Milk", "name_ar": "شاي بالبن", "img": "3.jfif", "price": "70.00" },
+        { "name_en": "Tea with Flavors", "name_ar": "شاي نكهات", "img": "4.jfif", "price": "55.00" },
+        { "name_en": "Pot Tea", "name_ar": "براد شاي", "img": "5.jfif", "price": "80.00" },
+        { "name_en": "Anise", "name_ar": "ينسون", "img": "6.jfif", "price": "40.00" },
+        { "name_en": "Mint", "name_ar": "نعناع", "img": "7.jfif", "price": "40.00" },
+        { "name_en": "Ginger", "name_ar": "زنجبيل", "img": "8.jfif", "price": "60.00" },
+        { "name_en": "Hibiscus", "name_ar": "كركديه", "img": "9.jfif", "price": "40.00" },
+        { "name_en": "Cinnamon", "name_ar": "قرفه", "img": "10.jfif", "price": "60.00" },
+        { "name_en": "Cinnamon with Milk", "name_ar": "قرفه بالبن", "img": "11.jfif", "price": "75.00" },
+        { "name_en": "Hot Cider", "name_ar": "هوت سيدر", "img": "12.jfif", "price": "75.00" },
+        { "name_en": "Herbs Cocktail", "name_ar": "كوكتيل اعشاب", "img": "13.jfif", "price": "70.00" },
+        { "name_en": "Sahlab Nuts", "name_ar": "سحلب مكسرات", "img": "14.jfif", "price": "90.00" },
+        { "name_en": "Sahlab Fruits", "name_ar": "سحلب فواكه", "img": "15.jfif", "price": "130.00" },
+        { "name_en": "Sahlab Oreo", "name_ar": "سحلب اوريو", "img": "16.jfif", "price": "120.00" }
+      ]
+    },
+    {
+      "id": "soda",
+      "category_en": "Soda Cocktail",
+      "category_ar": "كوكتيل الصودا",
+      "items": [
+        { "name_en": "Mojito", "name_ar": "موهيتو", "img": "17.jfif", "price": "90.00" },
+        { "name_en": "Scotch Menit", "name_ar": "سكوتش مينت", "img": "18.jfif", "price": "90.00" },
+        { "name_en": "Sunshine", "name_ar": "صن شاين", "img": "19.jfif", "price": "90.00" },
+        { "name_en": "Blue Sky", "name_ar": "بلو سكاي", "img": "20.jfif", "price": "90.00" },
+        { "name_en": "Cherry Cola", "name_ar": "شيري كولا", "img": "21.jfif", "price": "90.00" },
+        { "name_en": "electric lemon", "name_ar": "الكتريك ليمون", "img": "22.jfif", "price": "100.00" },
+        { "name_en": "Superman", "name_ar": "سوبرمان", "img": "23.jfif", "price": "115.00" },
+        { "name_en": "Redbull Passion Fruit", "name_ar": "ردبول باشون فروت", "img": "24.jfif", "price": "120.00" }
+      ]
+    },
+    {
+      "id": "coffee",
+      "category_en": "Coffee",
+      "category_ar": "قهوة",
+      "items": [
+        { "name_en": "Turkish Coffee", "name_ar": "قهوة تركي", "img": "25.jfif", "price": "55.00" },
+        { "name_en": "Turkish Coffee (D)", "name_ar": "قهوة تركي دبل", "img": "26.jfif", "price": "65.00" },
+        { "name_en": "French Coffee", "name_ar": "قهوة فرنساوي", "img": "27.jfif", "price": "70.00" },
+        { "name_en": "Hazelnut Coffee", "name_ar": "قهوة بندق", "img": "28.jfif", "price": "75.00" },
+        { "name_en": "Nutella Coffee", "name_ar": "قهوة نوتيلا", "img": "29.jfif", "price": "65.00" },
+        { "name_en": "Espresso Single", "name_ar": "اسبرسو سنجل", "img": "30.jfif", "price": "60.00" },
+        { "name_en": "Double Espresso", "name_ar": "اسبرسو دبل", "img": "31.jfif", "price": "70.00" },
+        { "name_en": "American Coffee", "name_ar": "امريكان كوفي", "img": "32.jfif", "price": "75.00" },
+        { "name_en": "Cappuccino", "name_ar": "كابتشينو", "img": "33.jfif", "price": "100.00" },
+        { "name_en": "Latte", "name_ar": "لاتيه", "img": "34.jfif", "price": "100.00" },
+        { "name_en": "Mikato Single", "name_ar": "ميكاتو سنجل", "img": "35.jfif", "price": "75.00" },
+        { "name_en": "Mikato Double", "name_ar": "ميكاتو دبل", "img": "36.jfif", "price": "85.00" },
+        { "name_en": "cortado", "name_ar": "كورتادو", "img": "37.jfif", "price": "85.00" },
+        { "name_en": "Caramel Mikato", "name_ar": "كارميل ميكاتو", "img": "38.jfif", "price": "90.00" },
+        { "name_en": "Mocha", "name_ar": "موكا", "img": "39.jfif", "price": "110.00" },
+        { "name_en": "Nescafe", "name_ar": "نسكافيه", "img": "40.jfif", "price": "55.00" },
+        { "name_en": "Nescafe with Milk", "name_ar": "نسكافيه بالبن", "img": "41.jfif", "price": "95.00" },
+        { "name_en": "Hot Chocolate", "name_ar": "هوت شوكلت", "img": "42.jfif", "price": "100.00" },
+        { "name_en": "Hot Chocolate Marshmallow", "name_ar": "هوت شوكلت مارشيميلو", "img": "43.jfif", "price": "120.00" },
+        { "name_en": "Flat White", "name_ar": "فلات وايت", "img": "44.jfif", "price": "100.00" },
+        { "name_en": "Spanish Latte", "name_ar": "اسبانش لاتيه", "img": "45.jfif", "price": "110.00" }
+      ]
+    },
+    {
+      "id": "frappe",
+      "category_en": "Frappe",
+      "category_ar": "فرابيه",
+      "items": [
+        { "name_en": "Chocolate", "name_ar": "شيكولاته", "img": "46.jfif", "price": "100.00" },
+        { "name_en": "Caramel", "name_ar": "كراميل", "img": "47.jfif", "price": "100.00" },
+        { "name_en": "Vanilla", "name_ar": "فانيليا", "img": "48.jfif", "price": "95.00" }
+      ]
+    },
+    {
+      "id": "smoothies",
+      "category_en": "smoothie",
+      "category_ar": "سموزي",
+      "items": [
+        { "name_en": "Mango", "name_ar": "مانجو", "img": "49.jfif", "price": "100.00" },
+        { "name_en": "Watermelon", "name_ar": "بطيخ", "img": "50.jfif", "price": "100.00" },
+        { "name_en": "Guava", "name_ar": "جوافة", "img": "51.jfif", "price": "90.00" },
+        { "name_en": "Kiwi", "name_ar": "كيوي", "img": "52.jfif", "price": "130.00" },
+        { "name_en": "Berries", "name_ar": "توت", "img": "53.jfif", "price": "100.00" },
+        { "name_en": "Peach", "name_ar": "خوخ", "img": "54.jfif", "price": "100.00" },
+        { "name_en": "Pineapple", "name_ar": "اناناس", "img": "55.jfif", "price": "100.00" },
+        { "name_en": "Watermelon Mint", "name_ar": "بطيخ نعناع", "img": "56.jfif", "price": "110.00" }
+      ]
+    },
+    {
+      "id": "ice-coffee",
+      "category_en": "Ice Coffee",
+      "category_ar": "قهوة مثلجة",
+      "items": [
+        { "name_en": "Mocha", "name_ar": "موكا", "img": "57.jfif", "price": "110.00" },
+        { "name_en": "Latte", "name_ar": "لاتيه", "img": "58.jfif", "price": "100.00" },
+        { "name_en": "Chocolate", "name_ar": "شوكلت", "img": "59.jfif", "price": "110.00" },
+        { "name_en": "Cappuccino", "name_ar": "كابتشينو", "img": "60.jfif", "price": "110.00" },
+        { "name_en": "Tea", "name_ar": "شاي", "img": "61.jfif", "price": "65.00" },
+        { "name_en": "Spanish Coffee", "name_ar": "آيس سبانيش", "img": "62.jfif", "price": "110.00" }
+      ]
+    },
+    {
+      "id": "milkshake",
+      "category_en": "Milkshake",
+      "category_ar": "ميلك شيك",
+      "items": [
+        { "name_en": "Mango", "name_ar": "مانجو", "img": "63.jfif", "price": "100.00" },
+        { "name_en": "Berries", "name_ar": "توت", "img": "64.jfif", "price": "100.00" },
+        { "name_en": "Mix Berries", "name_ar": "میکس توت", "img": "65.jfif", "price": "100.00" },
+        { "name_en": "Caramel", "name_ar": "كراميل", "img": "66.jfif", "price": "100.00" },
+        { "name_en": "Strawberry", "name_ar": "فراولة", "img": "67.jfif", "price": "90.00" },
+        { "name_en": "Chocolate", "name_ar": "شوكلت", "img": "68.jfif", "price": "110.00" },
+        { "name_en": "Oreo", "name_ar": "اوريو", "img": "69.jfif", "price": "120.00" },
+        { "name_en": "Vanilla", "name_ar": "فانيليا", "img": "70.jfif", "price": "90.00" },
+        { "name_en": "Lotus", "name_ar": "لوتس", "img": "71.jfif", "price": "110.00" },
+        { "name_en": "Kit Kat", "name_ar": "کیت کات", "img": "72.jfif", "price": "130.00" }
+      ]
+    },
+    {
+      "id": "fresh-juice",
+      "category_en": "Fresh Juice",
+      "category_ar": "عصائر طازجة",
+      "items": [
+        { "name_en": "Mango", "name_ar": "مانجو", "img": "73.jfif", "price": "100.00" },
+        { "name_en": "mango peach", "name_ar": "مانجو خوخ", "img": "74.jfif", "price": "110.00" },
+        { "name_en": "mango kiwi", "name_ar": "مانجو كيوي", "img": "75.jfif", "price": "110.00" },
+        { "name_en": "Strawberry", "name_ar": "فراولة", "img": "76.jfif", "price": "90.00" },
+        { "name_en": "Guava", "name_ar": "جوافة", "img": "77.jfif", "price": "90.00" },
+        { "name_en": "Orange", "name_ar": "برتقال", "img": "78.jfif", "price": "85.00" },
+        { "name_en": "Lemon", "name_ar": "ليمون", "img": "79.jfif", "price": "80.00" },
+        { "name_en": "Lemon with Mint", "name_ar": "ليمون نعناع", "img": "80.jfif", "price": "85.00" },
+        { "name_en": "Watermelon", "name_ar": "بطيخ", "img": "81.jfif", "price": "100.00" },
+        { "name_en": "Banana with Milk", "name_ar": "موز بالبن", "img": "82.jfif", "price": "100.00" },
+        { "name_en": "Guava with Milk", "name_ar": "جوافه بالبن", "img": "83.jfif", "price": "100.00" },
+        { "name_en": "green piont", "name_ar": "جوافه نعناع", "img": "84.jfif", "price": "100.00" },
+        { "name_en": "hibiscus crush", "name_ar": "هيبسكس كراش", "img": "85.jfif", "price": "120.00" },
+        { "name_en": "Kiwi", "name_ar": "كيوي", "img": "86.jfif", "price": "130.00" },
+        { "name_en": "Avocado", "name_ar": "افوكادو", "img": "87.jfif", "price": "150.00" },
+        { "name_en": "Fruit Salad", "name_ar": "سلطه فواكه", "img": "88.jfif", "price": "150.00" }
+      ]
+    },
+    {
+      "id": "yogurt-drinks",
+      "category_en": "Yogurt Drinks",
+      "category_ar": "مشروبات زبادي",
+      "items": [
+        { "name_en": "Honey", "name_ar": "عسل", "img": "89.jfif", "price": "85.00" },
+        { "name_en": "Mango", "name_ar": "مانجو", "img": "90.jfif", "price": "100.00" },
+        { "name_en": "Strawberry", "name_ar": "فراولة", "img": "91.jfif", "price": "95.00" },
+        { "name_en": "Banana", "name_ar": "موز", "img": "92.jfif", "price": "95.00" },
+        { "name_en": "Berries", "name_ar": "توت", "img": "93.jfif", "price": "95.00" },
+        { "name_en": "Vanilla", "name_ar": "فانيليا", "img": "94.jfif", "price": "95.00" },
+        { "name_en": "Kiwi", "name_ar": "كيوي", "img": "95.jfif", "price": "130.00" },
+        { "name_en": "Fruit", "name_ar": "فواكه", "img": "96.jfif", "price": "150.00" },
+        { "name_en": "Passion", "name_ar": "باشون", "img": "97.jfif", "price": "110.00" }
+      ]
+    },
+    {
+      "id": "soft-drinks",
+      "category_en": "Soft Drinks",
+      "category_ar": "المشروبات الغازية",
+      "items": [
+        { "name_en": "Water", "name_ar": "مياه", "img": "98.jfif", "price": "15.00" },
+        { "name_en": "7UP", "name_ar": "سفن", "img": "99.jfif", "price": "55.00" },
+        { "name_en": "coca cola", "name_ar": "كوكاكولا", "img": "100.jfif", "price": "55.00" },
+        { "name_en": "Pepsi", "name_ar": "بيبسي", "img": "101.jfif", "price": "55.00" },
+        { "name_en": "pepsi deit", "name_ar": "بيبسي دايت", "img": "102.jfif", "price": "55.00" },
+        { "name_en": "V Seven", "name_ar": "ڤي سيفن", "img": "103.jfif", "price": "55.00" },
+        { "name_en": "V Cola", "name_ar": "ڤي كولا", "img": "104.jfif", "price": "55.00" },
+        { "name_en": "Twist", "name_ar": "تويست", "img": "105.jfif", "price": "55.00" },
+        { "name_en": "Fury", "name_ar": "فيوري", "img": "106.jfif", "price": "55.00" },
+        { "name_en": "Sting", "name_ar": "استنج", "img": "107.jfif", "price": "55.00" },
+        { "name_en": "Schweppes", "name_ar": "شويبس", "img": "108.jfif", "price": "55.00" },
+        { "name_en": "Fayrouz", "name_ar": "فيروز", "img": "109.jfif", "price": "55.00" },
+        { "name_en": "Birell", "name_ar": "بيريل", "img": "110.jfif", "price": "55.00" },
+        { "name_en": "Redbull", "name_ar": "ريدبول", "img": "111.jfif", "price": "90.00" }
+      ]
+    },
+    {
+      "id": "desserts",
+      "category_en": "Desserts",
+      "category_ar": "الحلويات",
+      "items": [
+        { "name_en": "Molten Cake", "name_ar": "مولتن كيك", "img": "112.jfif", "price": "100.00" },
+        { "name_en": "molten cake birthday", "name_ar": "مولتن كيك عيد ميلاد", "img": "113.jfif", "price": "150.00" },
+        { "name_en": "Cheesecake", "name_ar": "تشيز كيك", "img": "114.jfif", "price": "85.00" },
+        { "name_en": "Chocolate Cake", "name_ar": "شوكلت كيك", "img": "115.jfif", "price": "90.00" },
+        { "name_en": "Plain Waffle", "name_ar": "وافل ميكس", "img": "116.jfif", "price": "200.00" },
+        { "name_en": "Chocolate Waffle", "name_ar": "وافل شيكولاته", "img": "117.jfif", "price": "120.00" },
+        { "name_en": "Lotus Waffle", "name_ar": "وافل لوتس", "img": "118.jfif", "price": "120.00" },
+        { "name_en": "Fruit Waffle", "name_ar": "وافل فواكه", "img": "119.jfif", "price": "150.00" },
+        { "name_en": "Oreo Waffle", "name_ar": "وافل اوريو", "img": "120.jfif", "price": "150.00" }
+      ]
+    }
+  ]
+}
