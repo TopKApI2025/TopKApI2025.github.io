@@ -2,28 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topkapi - Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Topkapi - Ottoman Flavors | Menu</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
         }
 
         body {
             background: url('./background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #2e3d2f;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
+        /* Header styling */
         .header {
-            background-color: rgba(28, 77, 63, 0.7);
+            background-color: rgba(28, 77, 63, 0.75);
+            backdrop-filter: blur(4px);
             color: white;
             text-align: center;
-            padding: 1rem 1rem;
+            padding: 1.5rem 1rem;
+            border-bottom: 1px solid rgba(255, 215, 175, 0.3);
         }
 
         .logo-wrapper {
@@ -35,36 +38,45 @@
         #logo {
             width: 200px;
             border-radius: 50%;
-            box-shadow: 0px 0px 20px white;
+            box-shadow: 0px 0px 25px rgba(255, 245, 220, 0.8);
             margin-bottom: 1rem;
+            transition: transform 0.2s ease;
+        }
+        #logo:hover {
+            transform: scale(1.02);
         }
 
         .header h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
-            font-weight: 300;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
         }
 
         .header p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-style: italic;
+            opacity: 0.95;
         }
 
+        /* Sticky Navigation */
         .sticky-nav {
-            background-color: rgba(22, 62, 50, 0.9);
-            padding: 1rem 0;
+            background-color: rgba(22, 62, 50, 0.92);
+            backdrop-filter: blur(8px);
+            padding: 0.7rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             overflow-x: auto;
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
 
         .nav-links {
@@ -72,16 +84,20 @@
             list-style: none;
             overflow-x: auto;
             white-space: nowrap;
-            gap: 1rem;
-            padding: 0.5rem 0;
+            gap: 0.5rem;
+            padding: 0.4rem 0;
+            scroll-behavior: smooth;
         }
 
         .nav-links::-webkit-scrollbar {
-            height: 6px;
+            height: 5px;
         }
-
+        .nav-links::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
         .nav-links::-webkit-scrollbar-thumb {
-            background: #ccc;
+            background: #e0cba0;
             border-radius: 10px;
         }
 
@@ -94,208 +110,265 @@
             flex-direction: column;
             align-items: center;
             text-decoration: none;
-            color: #ddd;
-            font-size: .9rem;
-            padding: 0.5rem 0.8rem;
+            color: #f2efea;
+            font-size: 0.85rem;
+            padding: 0.6rem 1rem;
+            border-radius: 40px;
+            transition: all 0.25s;
+            background: rgba(255,255,240,0.05);
         }
 
         .nav-en {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
+            font-weight: 600;
             margin-bottom: 0.2rem;
         }
 
         .nav-ar {
-            font-size: 1.11111111111111111rem;
+            font-size: 0.9rem;
             direction: rtl;
+            font-weight: 400;
         }
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: #e0e8de;
-            background-color: rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
+            background-color: rgba(255, 215, 150, 0.25);
+            color: #ffefcf;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
         }
 
+        /* Main container */
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 2rem auto;
-            padding: 0 2rem;
-            background-color: rgba(252, 243, 228, 0.85);
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 2rem 2rem;
+            background-color: rgba(252, 245, 232, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 32px;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
         }
 
+        /* Menu sections */
         .menu-section {
-            margin-bottom: 3rem;
             display: none;
+            animation: fadeIn 0.35s ease;
         }
 
         .menu-section.active {
             display: block;
         }
 
-        .menu-section h2 {
-            color: #1c4d3f;
-            border-bottom: 2px solid #c8d5cc;
-            padding-bottom: 0.5rem;
-            margin-top: 20px;
-            margin-bottom: 1.5rem;
-            margin: 20px;
-            font-size: 1.4rem;
-            text-align: center;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px);}
+            to { opacity: 1; transform: translateY(0);}
         }
 
-        /* Card Style - Two Parts */
+        .menu-section h2 {
+            color: #1c4d3f;
+            border-bottom: 3px solid #e2c28b;
+            display: inline-block;
+            padding-bottom: 0.45rem;
+            margin-top: 0;
+            margin-bottom: 2rem;
+            font-size: 1.9rem;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* === NEW CARD LAYOUT: left side name + price (stacked), right side image only === */
         .menu-item {
-            background: white;
-            border-radius: 16px;
-            padding: 1rem 1.5rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 1rem 1.8rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+            transition: all 0.25s ease;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
+            border: 1px solid rgba(226, 194, 139, 0.3);
         }
 
         .menu-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
+            border-color: #e2c28b;
+            background: #fffef8;
         }
 
-        /* Left Part - Name and Price */
-        .item-left {
+        /* LEFT SIDE (name + price stacked vertically) */
+        .item-info {
             flex: 2;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
+            flex-direction: column;
+            gap: 0.4rem;
         }
 
-        /* Name Section */
-        .item-name-section {
-            flex: 2;
+        /* Name block: EN + AR */
+        .item-name {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
         }
 
         .item-name-en {
-            font-weight: bold;
+            font-weight: 800;
             color: #1c4d3f;
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
+            font-size: 1.3rem;
+            letter-spacing: -0.2px;
         }
 
         .item-name-ar {
             font-weight: 500;
-            color: #5a6e5b;
-            font-size: 0.95rem;
+            color: #6f5b3e;
+            font-size: 1rem;
             direction: rtl;
             text-align: left;
+            font-family: 'Segoe UI', 'Tahoma', system-ui;
         }
 
-        /* Price Section */
+        /* Price - now placed directly under the name (stacked) */
         .item-price {
-            font-weight: bold;
+            font-weight: 700;
             color: #c17b3a;
             font-size: 1.3rem;
-            min-width: 90px;
-            text-align: center;
-            background: #fdf8f0;
-            padding: 0.4rem 0.8rem;
-            border-radius: 30px;
+            background: #fef6e8;
+            display: inline-block;
+            width: fit-content;
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+            margin-top: 0.2rem;
+            border: 1px solid #f3e1c4;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
         }
 
-        /* Right Part - Image */
-        .item-right {
+        /* RIGHT SIDE: image only (no extra text) */
+        .item-image-wrapper {
             flex-shrink: 0;
         }
 
         .item-image {
-            width: 70px;
-            height: 70px;
-            border-radius: 12px;
+            width: 85px;
+            height: 85px;
+            border-radius: 20px;
             object-fit: cover;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            background: #f5f0e6;
-            transition: transform 0.2s;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+            background: #f0e7d8;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: block;
         }
 
         .item-image:hover {
             transform: scale(1.05);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
         }
 
+        /* Footer */
         .footer {
-            background-color: rgba(28, 77, 63, 0.9);
-            color: #e0e8de;
+            background-color: rgba(22, 62, 50, 0.94);
+            color: #ece3d8;
             text-align: center;
-            padding: 2rem 0;
+            padding: 2rem 1rem;
             margin-top: 3rem;
+            backdrop-filter: blur(4px);
         }
 
         .footer p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
 
         .social-icons {
-            margin-top: 1rem;
+            margin-top: 0.8rem;
             display: flex;
-            gap: 1rem;
+            gap: 1.6rem;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .social-icons a {
-            color: #fdfaf5;
-            font-size: 1.3rem;
-            transition: transform 0.2s ease, color 0.2s ease;
+            color: #fef5e6;
+            font-size: 1.5rem;
+            transition: all 0.2s ease;
+            display: inline-block;
         }
 
         .social-icons a:hover {
-            color: #d0e7d2;
+            color: #ffda99;
             transform: scale(1.2);
         }
 
-        .loading {
+        /* Loading & Error */
+        .loading, .error {
             text-align: center;
             padding: 3rem;
-            font-size: 1.2rem;
-            color: #1c4d3f;
+            font-size: 1.3rem;
+            font-weight: 500;
+            background: rgba(255,248,235,0.9);
+            border-radius: 48px;
         }
-
         .error {
-            text-align: center;
-            padding: 3rem;
-            font-size: 1.2rem;
-            color: #c0392b;
+            color: #b8513a;
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (max-width: 680px) {
+            .container {
+                padding: 1.2rem;
+                margin: 1rem;
+            }
+            .menu-item {
+                flex-direction: row;
+                padding: 1rem;
+                gap: 1rem;
+            }
+            .item-info {
+                flex: 2;
+            }
+            .item-name-en {
+                font-size: 1.1rem;
+            }
+            .item-price {
+                font-size: 1.1rem;
+                padding: 0.2rem 0.8rem;
+            }
+            .item-image {
+                width: 70px;
+                height: 70px;
+                border-radius: 16px;
+            }
+            .menu-section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .nav-en {
+                font-size: 0.9rem;
+            }
+            .nav-ar {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
             .menu-item {
                 flex-direction: column;
-                text-align: center;
-                padding: 1rem;
+                align-items: flex-start;
+                text-align: left;
             }
-            
-            .item-left {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .item-name-section {
-                text-align: center;
-            }
-            
-            .item-name-ar {
-                text-align: center;
-                direction: ltr;
-            }
-            
-            .item-right {
+            .item-image-wrapper {
+                align-self: center;
                 margin-top: 0.5rem;
             }
-            
-            .container {
-                padding: 0 1rem;
+            .item-price {
+                font-size: 1rem;
+            }
+            .item-name-ar {
+                text-align: left;
+                direction: ltr;
             }
         }
     </style>
@@ -303,18 +376,16 @@
 </head>
 <body>
     <header class="header">
-        <div class="overlay">
-            <div class="logo-wrapper">
-                <img id="logo" src="./logo.jpg" alt="Topkapi Logo">
-                <h1>topkapi</h1>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/+201551004848"><i class="fab fa-whatsapp"></i></a>
-                    <a href="tel:+01551004848"><i class="fas fa-phone"></i></a>
-                    <a href="https://maps.google.com?q=Topkapi+Cafe"><i class="fas fa-map-pin"></i></a>
-                </div>
+        <div class="logo-wrapper">
+            <img id="logo" src="./logo.jpg" alt="Topkapi Palace Logo">
+            <h1>topkapi</h1>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/+201551004848" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="tel:+01551004848" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                <a href="https://maps.google.com?q=Topkapi+Cafe" aria-label="Location"><i class="fas fa-map-pin"></i></a>
             </div>
         </div>
     </header>
@@ -322,17 +393,17 @@
     <nav class="sticky-nav">
         <div class="nav-container">
             <ul class="nav-links" id="nav-links">
-                <!-- Nav links will be dynamically generated from JSON -->
+                <!-- dynamic nav injected -->
             </ul>
         </div>
     </nav>
 
     <main class="container" id="menu-container">
-        <div class="loading">Loading menu...</div>
+        <div class="loading"><i class="fas fa-spinner fa-pulse"></i> Loading Ottoman delights...</div>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 Topkapi - All Rights Reserved</p>
+        <p>&copy; 2024 Topkapi - Authentic Taste & Ottoman Elegance</p>
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-tiktok"></i></a>
@@ -344,82 +415,7 @@
     </footer>
 
     <script>
-        let menuData = null;
-
-        // Function to generate image path
-        function getImagePath(imgName) {
-            return `./images/${imgName}`;
-        }
-
-        // Function to render menu from JSON data
-        function renderMenu(data) {
-            const container = document.getElementById('menu-container');
-            const navLinksContainer = document.getElementById('nav-links');
-            
-            if (!data || !data.menu || data.menu.length === 0) {
-                container.innerHTML = '<div class="error">Failed to load menu data</div>';
-                return;
-            }
-
-            // Clear containers
-            container.innerHTML = '';
-            navLinksContainer.innerHTML = '';
-
-            // Generate nav links and menu sections
-            data.menu.forEach((category, index) => {
-                // Create nav link
-                const navItem = document.createElement('li');
-                const navLink = document.createElement('a');
-                navLink.href = `#${category.id}`;
-                navLink.className = `nav-link ${index === 0 ? 'active' : ''}`;
-                navLink.setAttribute('data-section', category.id);
-                navLink.innerHTML = `
-                    <span class="nav-en">${category.category_en}</span>
-                    <span class="nav-ar">${category.category_ar}</span>
-                `;
-                navItem.appendChild(navLink);
-                navLinksContainer.appendChild(navItem);
-
-                // Create menu section
-                const section = document.createElement('section');
-                section.id = category.id;
-                section.className = `menu-section ${index === 0 ? 'active' : ''}`;
-                
-                const heading = document.createElement('h2');
-                heading.innerHTML = `${category.category_en} - ${category.category_ar}`;
-                section.appendChild(heading);
-
-                // Create menu items with new card layout
-                category.items.forEach(item => {
-                    const menuItem = document.createElement('div');
-                    menuItem.className = 'menu-item';
-                    
-                    // Card structure:
-                    // Left part: name section (EN + AR) and price opposite them
-                    // Right part: image
-                    menuItem.innerHTML = `
-                        <div class="item-left">
-                            <div class="item-name-section">
-                                <div class="item-name-en">${escapeHtml(item.name_en)}</div>
-                                <div class="item-name-ar">${escapeHtml(item.name_ar)}</div>
-                            </div>
-                            <div class="item-price">${item.price} EGP</div>
-                        </div>
-                        <div class="item-right">
-                            <img class="item-image" src="${getImagePath(item.img)}" alt="${escapeHtml(item.name_en)}" onerror="this.src='./images/placeholder.jfif'">
-                        </div>
-                    `;
-                    section.appendChild(menuItem);
-                });
-                
-                container.appendChild(section);
-            });
-
-            // Setup navigation click handlers
-            setupNavigation();
-        }
-
-        // Simple escape function to prevent XSS
+        // Helper: escape HTML to prevent injection
         function escapeHtml(str) {
             if (!str) return '';
             return str
@@ -430,44 +426,174 @@
                 .replace(/'/g, '&#39;');
         }
 
-        // Function to setup navigation click handlers
+        // generate image path
+        function getImagePath(imgName) {
+            if (!imgName) return './images/placeholder.jfif';
+            // if image already contains path just use it, but we assume inside ./images/
+            return `./images/${imgName}`;
+        }
+
+        // Render menu with new card structure: LEFT = name (EN+AR) + price below name; RIGHT = image only
+        function renderMenu(data) {
+            const container = document.getElementById('menu-container');
+            const navContainer = document.getElementById('nav-links');
+            
+            if (!data || !data.menu || data.menu.length === 0) {
+                container.innerHTML = '<div class="error"><i class="fas fa-exclamation-triangle"></i> No menu data available. Please check data.json</div>';
+                return;
+            }
+
+            container.innerHTML = '';
+            navContainer.innerHTML = '';
+
+            // Build categories and sections
+            data.menu.forEach((category, idx) => {
+                // Create navigation link
+                const navItem = document.createElement('li');
+                const navLink = document.createElement('a');
+                navLink.href = `#${category.id}`;
+                navLink.className = `nav-link ${idx === 0 ? 'active' : ''}`;
+                navLink.setAttribute('data-section', category.id);
+                navLink.innerHTML = `
+                    <span class="nav-en">${escapeHtml(category.category_en)}</span>
+                    <span class="nav-ar">${escapeHtml(category.category_ar)}</span>
+                `;
+                navItem.appendChild(navLink);
+                navContainer.appendChild(navItem);
+
+                // Create menu section
+                const section = document.createElement('section');
+                section.id = category.id;
+                section.className = `menu-section ${idx === 0 ? 'active' : ''}`;
+                
+                const heading = document.createElement('h2');
+                heading.innerHTML = `${escapeHtml(category.category_en)} &nbsp;•&nbsp; ${escapeHtml(category.category_ar)}`;
+                section.appendChild(heading);
+
+                // Loop items and build new card (name + price stacked left, image right)
+                if (category.items && category.items.length) {
+                    category.items.forEach(item => {
+                        const menuCard = document.createElement('div');
+                        menuCard.className = 'menu-item';
+                        
+                        // LEFT SIDE: contains name block and price directly under (stacked)
+                        const leftDiv = document.createElement('div');
+                        leftDiv.className = 'item-info';
+                        
+                        // Name section (EN + AR)
+                        const nameDiv = document.createElement('div');
+                        nameDiv.className = 'item-name';
+                        const nameEnSpan = document.createElement('div');
+                        nameEnSpan.className = 'item-name-en';
+                        nameEnSpan.textContent = escapeHtml(item.name_en);
+                        const nameArSpan = document.createElement('div');
+                        nameArSpan.className = 'item-name-ar';
+                        nameArSpan.textContent = escapeHtml(item.name_ar);
+                        nameDiv.appendChild(nameEnSpan);
+                        nameDiv.appendChild(nameArSpan);
+                        
+                        // Price element (placed right after name, stacked)
+                        const priceSpan = document.createElement('div');
+                        priceSpan.className = 'item-price';
+                        // price format: show price + "EGP"
+                        priceSpan.textContent = `${item.price} EGP`;
+                        
+                        // Append name and price to left-info container (stacked)
+                        leftDiv.appendChild(nameDiv);
+                        leftDiv.appendChild(priceSpan);
+                        
+                        // RIGHT SIDE: image only
+                        const rightDiv = document.createElement('div');
+                        rightDiv.className = 'item-image-wrapper';
+                        const img = document.createElement('img');
+                        img.className = 'item-image';
+                        img.alt = escapeHtml(item.name_en);
+                        img.src = getImagePath(item.img);
+                        // fallback image in case of broken link
+                        img.onerror = function() {
+                            this.onerror = null;
+                            this.src = './images/placeholder.jfif';
+                        };
+                        rightDiv.appendChild(img);
+                        
+                        menuCard.appendChild(leftDiv);
+                        menuCard.appendChild(rightDiv);
+                        section.appendChild(menuCard);
+                    });
+                } else {
+                    // Optional: if category has no items, show a friendly placeholder
+                    const emptyMsg = document.createElement('div');
+                    emptyMsg.className = 'menu-item';
+                    emptyMsg.style.justifyContent = 'center';
+                    emptyMsg.innerHTML = `<div class="item-info" style="text-align:center"><i class="fas fa-utensils"></i> Coming soon...</div>`;
+                    section.appendChild(emptyMsg);
+                }
+                
+                container.appendChild(section);
+            });
+
+            // Setup navigation behaviour
+            setupNavigation();
+        }
+
+        // Navigation: switch sections smoothly
         function setupNavigation() {
             const navLinks = document.querySelectorAll('.nav-link');
             const menuSections = document.querySelectorAll('.menu-section');
 
+            if (!navLinks.length || !menuSections.length) return;
+
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const sectionToShow = this.getAttribute('data-section');
-                    navLinks.forEach(navLink => navLink.classList.remove('active'));
-                    menuSections.forEach(section => section.classList.remove('active'));
+                    const targetId = this.getAttribute('data-section');
+                    if (!targetId) return;
+                    
+                    // update active class on nav
+                    navLinks.forEach(nav => nav.classList.remove('active'));
                     this.classList.add('active');
-                    const activeSection = document.getElementById(sectionToShow);
+                    
+                    // hide all sections, show target
+                    menuSections.forEach(section => section.classList.remove('active'));
+                    const activeSection = document.getElementById(targetId);
                     if (activeSection) {
                         activeSection.classList.add('active');
+                        // optional: smooth scroll to section heading
+                        activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 });
             });
         }
 
-        // Fetch menu data from data.json
+        // Fetch data.json and handle errors
         async function loadMenu() {
+            const container = document.getElementById('menu-container');
             try {
+                // Attempt to fetch from same directory
                 const response = await fetch('./data.json');
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    throw new Error(`HTTP ${response.status} - ${response.statusText}`);
                 }
-                menuData = await response.json();
-                renderMenu(menuData);
-            } catch (error) {
-                console.error('Error loading menu:', error);
-                const container = document.getElementById('menu-container');
-                container.innerHTML = `<div class="error">Error loading menu: ${error.message}. Please make sure data.json exists in the same directory.</div>`;
+                const jsonData = await response.json();
+                // validate structure
+                if (!jsonData.menu || !Array.isArray(jsonData.menu)) {
+                    throw new Error('Invalid menu structure: missing "menu" array');
+                }
+                renderMenu(jsonData);
+            } catch (err) {
+                console.error('Menu loading error:', err);
+                container.innerHTML = `<div class="error">
+                    <i class="fas fa-database"></i> Could not load menu: ${escapeHtml(err.message)}.<br>
+                    Please ensure <strong>data.json</strong> exists in the root folder and follows the required format.
+                    <br><br>📁 Expected format: { "menu": [ { "id":"...", "category_en":"...", "category_ar":"...", "items": [{"name_en":"...","name_ar":"...","price":...,"img":"..."}] } ] }
+                </div>`;
             }
         }
 
-        // Load menu when page loads
-        document.addEventListener('DOMContentLoaded', loadMenu);
+        // Initialize on DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            loadMenu();
+        });
     </script>
 </body>
 </html>
