@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Topkapi - Ottoman Cuisine | Responsive Menu</title>
+    <title>Topkapi - Ottoman Cuisine | Bilingual Menu</title>
     <style>
         * {
             margin: 0;
@@ -55,6 +55,36 @@
             text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
         }
 
+        /* Language Toggle Button */
+        .lang-toggle-container {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .lang-btn {
+            background: rgba(255, 245, 220, 0.2);
+            border: 2px solid rgba(255, 215, 150, 0.8);
+            color: white;
+            padding: 0.5rem 1.8rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(4px);
+        }
+        .lang-btn.active {
+            background: #e2b87a;
+            border-color: white;
+            color: #1c4d3f;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .lang-btn:hover {
+            background: rgba(255, 215, 150, 0.5);
+            transform: translateY(-2px);
+        }
+
         /* Sticky Navigation */
         .sticky-nav {
             background-color: rgba(22, 62, 50, 0.94);
@@ -65,6 +95,17 @@
             z-index: 100;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll animation hint (pulse effect on first load) */
+        @keyframes scrollHint {
+            0% { box-shadow: 0 0 0 0 rgba(226, 200, 120, 0.7); border-right-color: #ffd966; }
+            50% { box-shadow: 0 0 0 8px rgba(226, 200, 120, 0); border-right-color: #ffcc44; }
+            100% { box-shadow: 0 0 0 0 rgba(226, 200, 120, 0); }
+        }
+        .scroll-hint {
+            animation: scrollHint 0.8s ease-in-out 2;
         }
 
         .nav-container {
@@ -112,16 +153,10 @@
             background: rgba(255,255,240,0.05);
         }
 
-        .nav-en {
+        .nav-category {
             font-size: 1.05rem;
             font-weight: 600;
             margin-bottom: 0.2rem;
-        }
-
-        .nav-ar {
-            font-size: 0.9rem;
-            direction: rtl;
-            font-weight: 400;
         }
 
         .nav-links a:hover,
@@ -172,8 +207,7 @@
             width: 100%;
         }
 
-        /* ========== CARD LAYOUT ========== */
-        /* Desktop default: name+price on LEFT, image on RIGHT (perfect opposite) */
+        /* Card layout */
         .menu-item {
             background: #ffffff;
             border-radius: 28px;
@@ -195,7 +229,6 @@
             background: #fffef8;
         }
 
-        /* LEFT SIDE: stacked name + price */
         .item-info {
             flex: 2;
             display: flex;
@@ -209,21 +242,12 @@
             gap: 0.25rem;
         }
 
-        .item-name-en {
+        .item-name-main {
             font-weight: 800;
             color: #1c4d3f;
             font-size: 1.35rem;
             letter-spacing: -0.2px;
             line-height: 1.3;
-        }
-
-        .item-name-ar {
-            font-weight: 500;
-            color: #6f5b3e;
-            font-size: 1rem;
-            direction: rtl;
-            text-align: left;
-            font-family: 'Segoe UI', 'Tahoma', system-ui;
         }
 
         .item-price {
@@ -237,10 +261,8 @@
             border-radius: 40px;
             margin-top: 0.2rem;
             border: 1px solid #f3e1c4;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
-        /* RIGHT SIDE: image wrapper */
         .item-image-wrapper {
             flex-shrink: 0;
         }
@@ -252,98 +274,47 @@
             object-fit: cover;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
             background: #f0e7d8;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: block;
+            transition: transform 0.2s;
         }
 
         .item-image:hover {
             transform: scale(1.05);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
         }
 
-        /* ========== MOBILE DIMENSION: Image perfectly opposite and BIGGER ========== */
+        /* Mobile: bigger image */
         @media (max-width: 680px) {
             .container {
                 padding: 1.2rem;
                 margin: 1rem;
             }
-            
             .menu-item {
                 padding: 1.2rem;
                 gap: 1.2rem;
-                flex-direction: row;        /* Keep row direction, but adjust sizing */
-                align-items: center;
             }
-            
-            /* On mobile: we want image on the right, larger, and opposite the text block */
-            .item-info {
-                flex: 1.5;
-                gap: 0.4rem;
-            }
-            
-            .item-name-en {
+            .item-name-main {
                 font-size: 1.2rem;
             }
-            
-            .item-name-ar {
-                font-size: 0.85rem;
-            }
-            
             .item-price {
                 font-size: 1.15rem;
                 padding: 0.25rem 1rem;
             }
-            
-            /* Make image significantly BIGGER on mobile, perfectly opposite */
-            .item-image-wrapper {
-                flex-shrink: 0;
-            }
-            
             .item-image {
                 width: 110px;
                 height: 110px;
                 border-radius: 28px;
-                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
             }
-            
             .menu-section h2 {
                 font-size: 1.5rem;
-                margin-bottom: 1.5rem;
-            }
-        }
-        
-        /* For very narrow phones (below 500px), ensure clear opposite alignment, image remains big */
-        @media (max-width: 520px) {
-            .menu-item {
-                padding: 1rem;
-                gap: 1rem;
-            }
-            
-            .item-image {
-                width: 100px;
-                height: 100px;
-                border-radius: 24px;
-            }
-            
-            .item-name-en {
-                font-size: 1.1rem;
-            }
-            
-            .item-price {
-                font-size: 1.05rem;
-                padding: 0.2rem 0.9rem;
-            }
-        }
-        
-        /* For larger tablets, keep default bigger desktop image */
-        @media (min-width: 681px) and (max-width: 1024px) {
-            .item-image {
-                width: 90px;
-                height: 90px;
             }
         }
 
-        /* Footer */
+        @media (max-width: 520px) {
+            .item-image {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
         .footer {
             background-color: rgba(22, 62, 50, 0.94);
             color: #ece3d8;
@@ -351,11 +322,6 @@
             padding: 2rem 1rem;
             margin-top: 3rem;
             backdrop-filter: blur(4px);
-        }
-
-        .footer p {
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
         }
 
         .social-icons {
@@ -370,7 +336,6 @@
             color: #fef5e6;
             font-size: 1.5rem;
             transition: all 0.2s ease;
-            display: inline-block;
         }
 
         .social-icons a:hover {
@@ -378,22 +343,15 @@
             transform: scale(1.2);
         }
 
-        /* Loading & Error */
         .loading, .error {
             text-align: center;
             padding: 3rem;
             font-size: 1.3rem;
-            font-weight: 500;
             background: rgba(255,248,235,0.95);
             border-radius: 48px;
         }
         .error {
             color: #b8513a;
-        }
-
-        /* extra polish */
-        .fa-spinner {
-            margin-right: 0.5rem;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -401,20 +359,24 @@
 <body>
     <header class="header">
         <div class="logo-wrapper">
-            <img id="logo" src="./logo.jpg" alt="Topkapi Palace Logo">
+            <img id="logo" src="./logo.jpg" alt="Topkapi Logo">
             <h1>topkapi</h1>
+            <div class="lang-toggle-container">
+                <button class="lang-btn active" id="btn-en">🇬🇧 English</button>
+                <button class="lang-btn" id="btn-ar">🇸🇦 العربية</button>
+            </div>
             <div class="social-icons">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/+201551004848" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="tel:+01551004848" aria-label="Phone"><i class="fas fa-phone"></i></a>
-                <a href="https://maps.google.com?q=Topkapi+Cafe" aria-label="Location"><i class="fas fa-map-pin"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/+201551004848"><i class="fab fa-whatsapp"></i></a>
+                <a href="tel:+01551004848"><i class="fas fa-phone"></i></a>
+                <a href="https://maps.google.com?q=Topkapi+Cafe"><i class="fas fa-map-pin"></i></a>
             </div>
         </div>
     </header>
     
-    <nav class="sticky-nav">
+    <nav class="sticky-nav" id="sticky-nav">
         <div class="nav-container">
             <ul class="nav-links" id="nav-links">
                 <!-- dynamic nav injected -->
@@ -423,7 +385,7 @@
     </nav>
 
     <main class="container" id="menu-container">
-        <div class="loading"><i class="fas fa-spinner fa-pulse"></i> Loading Ottoman delights...</div>
+        <div class="loading"><i class="fas fa-spinner fa-pulse"></i> Loading menu...</div>
     </main>
 
     <footer class="footer">
@@ -439,100 +401,106 @@
     </footer>
 
     <script>
-        // Helper: escape HTML to prevent injection
+        // Store global data & state
+        let fullMenuData = null;
+        let currentLanguage = 'en';   // 'en' or 'ar'
+
+        // Helper: escape HTML
         function escapeHtml(str) {
             if (!str) return '';
-            return str
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#39;');
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
         }
 
-        // generate image path
         function getImagePath(imgName) {
             if (!imgName) return './images/placeholder.jfif';
             return `./images/${imgName}`;
         }
 
-        // Render menu with perfect opposite layout: name+price on left, image on right.
-        // On mobile via CSS the image appears bigger and perfectly opposite.
-        function renderMenu(data) {
-            const container = document.getElementById('menu-container');
-            const navContainer = document.getElementById('nav-links');
+        // Render everything based on currentLanguage
+        function renderFullUI() {
+            if (!fullMenuData || !fullMenuData.menu) return;
             
-            if (!data || !data.menu || data.menu.length === 0) {
-                container.innerHTML = '<div class="error"><i class="fas fa-exclamation-triangle"></i> No menu data available. Please check data.json</div>';
-                return;
+            renderNavigation(fullMenuData.menu);
+            renderMenuSections(fullMenuData.menu);
+            setupNavigationHandlers();
+            
+            // On first load (or language switch), keep active first section
+            const firstSection = document.querySelector('.menu-section');
+            if (firstSection && !document.querySelector('.menu-section.active')) {
+                firstSection.classList.add('active');
+                const firstNav = document.querySelector('.nav-link');
+                if (firstNav) firstNav.classList.add('active');
             }
+        }
 
-            container.innerHTML = '';
+        // Render navigation: category name depends on language
+        function renderNavigation(categories) {
+            const navContainer = document.getElementById('nav-links');
+            if (!navContainer) return;
             navContainer.innerHTML = '';
-
-            // Build categories and sections
-            data.menu.forEach((category, idx) => {
-                // Create navigation link
+            
+            categories.forEach((category, idx) => {
+                const categoryName = currentLanguage === 'en' ? category.category_en : category.category_ar;
                 const navItem = document.createElement('li');
                 const navLink = document.createElement('a');
                 navLink.href = `#${category.id}`;
                 navLink.className = `nav-link ${idx === 0 ? 'active' : ''}`;
                 navLink.setAttribute('data-section', category.id);
                 navLink.innerHTML = `
-                    <span class="nav-en">${escapeHtml(category.category_en)}</span>
-                    <span class="nav-ar">${escapeHtml(category.category_ar)}</span>
+                    <span class="nav-category">${escapeHtml(categoryName)}</span>
                 `;
                 navItem.appendChild(navLink);
                 navContainer.appendChild(navItem);
+            });
+        }
 
-                // Create menu section
+        // Render menu sections with item names based on language
+        function renderMenuSections(categories) {
+            const container = document.getElementById('menu-container');
+            if (!container) return;
+            container.innerHTML = '';
+            
+            categories.forEach((category, idx) => {
+                const categoryDisplayName = currentLanguage === 'en' ? category.category_en : category.category_ar;
                 const section = document.createElement('section');
                 section.id = category.id;
                 section.className = `menu-section ${idx === 0 ? 'active' : ''}`;
                 
                 const heading = document.createElement('h2');
-                heading.innerHTML = `${escapeHtml(category.category_en)} &nbsp;•&nbsp; ${escapeHtml(category.category_ar)}`;
+                heading.textContent = escapeHtml(categoryDisplayName);
                 section.appendChild(heading);
-
-                // Loop items and build card: LEFT (name + price stacked), RIGHT (image only)
+                
                 if (category.items && category.items.length) {
                     category.items.forEach(item => {
+                        const itemName = currentLanguage === 'en' ? item.name_en : item.name_ar;
                         const menuCard = document.createElement('div');
                         menuCard.className = 'menu-item';
                         
-                        // LEFT SIDE: contains name block and price stacked vertically
+                        // Left side: name + price stacked
                         const leftDiv = document.createElement('div');
                         leftDiv.className = 'item-info';
                         
-                        // Name section (EN + AR)
                         const nameDiv = document.createElement('div');
                         nameDiv.className = 'item-name';
-                        const nameEnSpan = document.createElement('div');
-                        nameEnSpan.className = 'item-name-en';
-                        nameEnSpan.textContent = escapeHtml(item.name_en);
-                        const nameArSpan = document.createElement('div');
-                        nameArSpan.className = 'item-name-ar';
-                        nameArSpan.textContent = escapeHtml(item.name_ar);
-                        nameDiv.appendChild(nameEnSpan);
-                        nameDiv.appendChild(nameArSpan);
+                        const nameMain = document.createElement('div');
+                        nameMain.className = 'item-name-main';
+                        nameMain.textContent = escapeHtml(itemName);
+                        nameDiv.appendChild(nameMain);
                         
-                        // Price element (placed directly under name, stacked)
                         const priceSpan = document.createElement('div');
                         priceSpan.className = 'item-price';
                         priceSpan.textContent = `${item.price} EGP`;
                         
-                        // Append name and price to left-info container
                         leftDiv.appendChild(nameDiv);
                         leftDiv.appendChild(priceSpan);
                         
-                        // RIGHT SIDE: image wrapper (image only)
+                        // Right side: image
                         const rightDiv = document.createElement('div');
                         rightDiv.className = 'item-image-wrapper';
                         const img = document.createElement('img');
                         img.className = 'item-image';
-                        img.alt = escapeHtml(item.name_en);
+                        img.alt = escapeHtml(itemName);
                         img.src = getImagePath(item.img);
-                        // fallback image in case of broken link
                         img.onerror = function() {
                             this.onerror = null;
                             this.src = './images/placeholder.jfif';
@@ -544,75 +512,176 @@
                         section.appendChild(menuCard);
                     });
                 } else {
-                    // empty state fallback for category with no items
                     const emptyMsg = document.createElement('div');
                     emptyMsg.className = 'menu-item';
                     emptyMsg.style.justifyContent = 'center';
-                    emptyMsg.innerHTML = `<div class="item-info" style="text-align:center; width:100%;"><i class="fas fa-utensils"></i> Coming soon...</div>`;
+                    emptyMsg.innerHTML = `<div class="item-info" style="text-align:center"><i class="fas fa-utensils"></i> Coming soon...</div>`;
                     section.appendChild(emptyMsg);
                 }
-                
                 container.appendChild(section);
             });
-
-            // Setup navigation behaviour
-            setupNavigation();
         }
 
-        // Navigation: switch sections smoothly
-        function setupNavigation() {
+        function setupNavigationHandlers() {
             const navLinks = document.querySelectorAll('.nav-link');
             const menuSections = document.querySelectorAll('.menu-section');
-
-            if (!navLinks.length || !menuSections.length) return;
-
+            
             navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('data-section');
-                    if (!targetId) return;
-                    
-                    // update active class on nav
-                    navLinks.forEach(nav => nav.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // hide all sections, show target
-                    menuSections.forEach(section => section.classList.remove('active'));
-                    const activeSection = document.getElementById(targetId);
-                    if (activeSection) {
-                        activeSection.classList.add('active');
-                        // smooth scroll to the heading for better UX
-                        activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
+                // Remove old listeners to avoid duplicates
+                link.removeEventListener('click', handleNavClick);
+                link.addEventListener('click', handleNavClick);
             });
+            
+            function handleNavClick(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-section');
+                if (!targetId) return;
+                
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+                
+                menuSections.forEach(section => section.classList.remove('active'));
+                const activeSection = document.getElementById(targetId);
+                if (activeSection) {
+                    activeSection.classList.add('active');
+                    activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
         }
-
-        // Fetch data.json and handle errors
+        
+        // ----- SCROLL ANIMATION ON FIRST LOAD (to show that category menu is scrollable) -----
+        let scrollAnimationTriggered = false;
+        
+        function triggerScrollHintAnimation() {
+            if (scrollAnimationTriggered) return;
+            scrollAnimationTriggered = true;
+            
+            const navContainer = document.querySelector('.sticky-nav');
+            const navScrollable = document.getElementById('nav-links');
+            if (!navContainer || !navScrollable) return;
+            
+            // Add pulse effect on the nav container to highlight scrollability
+            navContainer.classList.add('scroll-hint');
+            setTimeout(() => {
+                navContainer.classList.remove('scroll-hint');
+            }, 1600);
+            
+            // Auto-scroll the nav-links horizontally slightly left and right to indicate scroll
+            const scrollWidth = navScrollable.scrollWidth;
+            const clientWidth = navScrollable.clientWidth;
+            
+            if (scrollWidth > clientWidth) {
+                // Smoothly scroll to right edge then back to start to hint scrollability
+                let startScroll = navScrollable.scrollLeft;
+                let maxScroll = scrollWidth - clientWidth;
+                
+                // Only animate if there is actually overflow
+                if (maxScroll > 5) {
+                    // Scroll to the end gently
+                    navScrollable.scrollTo({ left: maxScroll, behavior: 'smooth' });
+                    // After 0.8s, scroll back to start
+                    setTimeout(() => {
+                        navScrollable.scrollTo({ left: startScroll, behavior: 'smooth' });
+                    }, 800);
+                } else {
+                    // small nudge effect
+                    navScrollable.scrollBy({ left: 30, behavior: 'smooth' });
+                    setTimeout(() => {
+                        navScrollable.scrollBy({ left: -30, behavior: 'smooth' });
+                    }, 400);
+                }
+            } else {
+                // Even if no overflow, add a gentle bounce to show it's interactive
+                navScrollable.style.transform = 'translateX(4px)';
+                setTimeout(() => {
+                    navScrollable.style.transform = 'translateX(-4px)';
+                    setTimeout(() => {
+                        navScrollable.style.transform = 'translateX(0)';
+                    }, 150);
+                }, 100);
+            }
+        }
+        
+        // Language switch logic
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            // Update button active states
+            const btnEn = document.getElementById('btn-en');
+            const btnAr = document.getElementById('btn-ar');
+            if (btnEn && btnAr) {
+                if (lang === 'en') {
+                    btnEn.classList.add('active');
+                    btnAr.classList.remove('active');
+                } else {
+                    btnAr.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+            // Re-render entire UI with new language
+            renderFullUI();
+            
+            // Preserve currently active section if possible (keep same category active after language switch)
+            const activeNav = document.querySelector('.nav-link.active');
+            if (activeNav) {
+                const targetId = activeNav.getAttribute('data-section');
+                if (targetId) {
+                    const sections = document.querySelectorAll('.menu-section');
+                    sections.forEach(s => s.classList.remove('active'));
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) targetSection.classList.add('active');
+                }
+            } else {
+                // fallback: first section active
+                const firstSection = document.querySelector('.menu-section');
+                const firstNav = document.querySelector('.nav-link');
+                if (firstSection && firstNav) {
+                    document.querySelectorAll('.menu-section').forEach(s => s.classList.remove('active'));
+                    firstSection.classList.add('active');
+                    document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+                    firstNav.classList.add('active');
+                }
+            }
+        }
+        
+        // Load data.json
         async function loadMenu() {
             const container = document.getElementById('menu-container');
             try {
                 const response = await fetch('./data.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status} - ${response.statusText}`);
-                }
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const jsonData = await response.json();
-                // validate structure
                 if (!jsonData.menu || !Array.isArray(jsonData.menu)) {
-                    throw new Error('Invalid menu structure: missing "menu" array');
+                    throw new Error('Invalid menu structure');
                 }
-                renderMenu(jsonData);
-            } catch (err) {
-                console.error('Menu loading error:', err);
+                fullMenuData = jsonData;
+                // Initial render in English
+                currentLanguage = 'en';
+                renderFullUI();
+                
+                // After UI is rendered, trigger scroll animation on navigation (first load)
+                setTimeout(() => {
+                    triggerScrollHintAnimation();
+                }, 500);
+                
+                // Setup language buttons AFTER data is loaded
+                const btnEn = document.getElementById('btn-en');
+                const btnAr = document.getElementById('btn-ar');
+                if (btnEn) {
+                    btnEn.onclick = () => setLanguage('en');
+                }
+                if (btnAr) {
+                    btnAr.onclick = () => setLanguage('ar');
+                }
+            } catch (error) {
+                console.error('Error loading menu:', error);
                 container.innerHTML = `<div class="error">
-                    <i class="fas fa-database"></i> Could not load menu: ${escapeHtml(err.message)}.<br>
-                    Please ensure <strong>data.json</strong> exists in the root folder and follows the required format.
-                    <br><br>📁 Expected format: { "menu": [ { "id":"...", "category_en":"...", "category_ar":"...", "items": [{"name_en":"...","name_ar":"...","price":...,"img":"..."}] } ] }
+                    <i class="fas fa-database"></i> Error: ${escapeHtml(error.message)}<br>
+                    Ensure data.json exists with proper structure.
                 </div>`;
             }
         }
-
-        // Initialize on DOM ready
+        
+        // Extra: smooth initial active highlight
         document.addEventListener('DOMContentLoaded', () => {
             loadMenu();
         });
