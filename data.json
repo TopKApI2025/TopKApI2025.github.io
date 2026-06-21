@@ -846,11 +846,11 @@
           "desc": ""
         },
         {
-          "name_en": "Chocolate Cake",
-          "name_ar": "شوكلت كيك",
-          "img": "115.jfif",
-          "price": "90.00",
-          "desc": ""
+          "name_en": "New Item",
+          "name_ar": "عنصر جديد",
+          "img": "",
+          "price": "0.00",
+          "desc": "Description here"
         }
       ]
     }
