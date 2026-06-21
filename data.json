@@ -641,13 +641,6 @@
           "img": "87.jfif",
           "price": "150.00",
           "desc": ""
-        },
-        {
-          "name_en": "Fruit Salad",
-          "name_ar": "سلطه فواكه",
-          "img": "88.jfif",
-          "price": "150.00",
-          "desc": ""
         }
       ]
     },
@@ -660,7 +653,7 @@
           "name_en": "Honey",
           "name_ar": "عسل",
           "img": "89.jfif",
-          "price": "85.00",
+          "price": "90.00",
           "desc": ""
         },
         {
