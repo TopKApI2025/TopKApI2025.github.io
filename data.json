@@ -401,21 +401,21 @@
           "name_en": "Peach",
           "name_ar": "خوخ",
           "img": "54.jpg",
-          "price": "100.00",
+          "price": "110.00",
           "desc": ""
         },
         {
           "name_en": "Pineapple",
           "name_ar": "اناناس",
           "img": "55.jfif",
-          "price": "100.00",
+          "price": "110.00",
           "desc": ""
         },
         {
           "name_en": "Watermelon Mint",
           "name_ar": "بطيخ نعناع",
           "img": "56.jfif",
-          "price": "110.00",
+          "price": "120.00",
           "desc": ""
         }
       ]
@@ -429,7 +429,7 @@
           "name_en": "Mocha",
           "name_ar": "موكا",
           "img": "57.jfif",
-          "price": "110.00",
+          "price": "120.00",
           "desc": ""
         },
         {
