@@ -380,28 +380,21 @@
           "name_en": "Watermelon",
           "name_ar": "بطيخ",
           "img": "50.jfif",
-          "price": "100.00",
-          "desc": ""
-        },
-        {
-          "name_en": "Guava",
-          "name_ar": "جوافة",
-          "img": "51.jfif",
-          "price": "90.00",
+          "price": "110.00",
           "desc": ""
         },
         {
           "name_en": "Kiwi",
           "name_ar": "كيوي",
           "img": "52.jfif",
-          "price": "130.00",
+          "price": "140.00",
           "desc": ""
         },
         {
           "name_en": "Berries",
           "name_ar": "توت",
           "img": "53.jpg",
-          "price": "100.00",
+          "price": "110.00",
           "desc": ""
         },
         {
