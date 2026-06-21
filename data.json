@@ -688,7 +688,7 @@
           "name_en": "Vanilla",
           "name_ar": "فانيليا",
           "img": "94.jpg",
-          "price": "95.00",
+          "price": "100.00",
           "desc": ""
         },
         {
@@ -877,13 +877,6 @@
           "name_en": "Fruit Waffle",
           "name_ar": "وافل فواكه",
           "img": "119.jfif",
-          "price": "150.00",
-          "desc": ""
-        },
-        {
-          "name_en": "Oreo Waffle",
-          "name_ar": "وافل اوريو",
-          "img": "120.jfif",
           "price": "150.00",
           "desc": ""
         }
