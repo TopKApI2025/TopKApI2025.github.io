@@ -436,14 +436,14 @@
           "name_en": "Latte",
           "name_ar": "لاتيه",
           "img": "58.jfif",
-          "price": "100.00",
+          "price": "110.00",
           "desc": ""
         },
         {
           "name_en": "Chocolate",
           "name_ar": "شوكلت",
           "img": "59.jpg",
-          "price": "110.00",
+          "price": "120.00",
           "desc": ""
         },
         {
@@ -457,7 +457,7 @@
           "name_en": "Tea",
           "name_ar": "شاي",
           "img": "61.jfif",
-          "price": "65.00",
+          "price": "90.00",
           "desc": ""
         },
         {
