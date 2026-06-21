@@ -464,7 +464,7 @@
           "name_en": "Spanish Coffee",
           "name_ar": "آيس سبانيش",
           "img": "62.jfif",
-          "price": "110.00",
+          "price": "120.00",
           "desc": ""
         }
       ]
@@ -478,21 +478,21 @@
           "name_en": "Mango",
           "name_ar": "مانجو",
           "img": "63.jfif",
-          "price": "100.00",
+          "price": "120.00",
           "desc": ""
         },
         {
           "name_en": "Berries",
           "name_ar": "توت",
           "img": "64.jfif",
-          "price": "100.00",
+          "price": "120.00",
           "desc": ""
         },
         {
           "name_en": "Mix Berries",
           "name_ar": "میکس توت",
           "img": "65.jfif",
-          "price": "100.00",
+          "price": "130.00",
           "desc": ""
         },
         {
