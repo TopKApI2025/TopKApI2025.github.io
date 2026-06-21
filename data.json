@@ -597,42 +597,35 @@
           "name_en": "Lemon with Mint",
           "name_ar": "ليمون نعناع",
           "img": "80.jfif",
-          "price": "85.00",
+          "price": "90.00",
           "desc": ""
         },
         {
           "name_en": "Watermelon",
           "name_ar": "بطيخ",
           "img": "81.jfif",
-          "price": "100.00",
+          "price": "110.00",
           "desc": ""
         },
         {
           "name_en": "Banana with Milk",
           "name_ar": "موز بالبن",
           "img": "82.jfif",
-          "price": "100.00",
+          "price": "120.00",
           "desc": ""
         },
         {
           "name_en": "Guava with Milk",
           "name_ar": "جوافه بالبن",
           "img": "83.jfif",
-          "price": "100.00",
+          "price": "120.00",
           "desc": ""
         },
         {
           "name_en": "green piont",
           "name_ar": "جوافه نعناع",
           "img": "84.jfif",
-          "price": "100.00",
-          "desc": ""
-        },
-        {
-          "name_en": "hibiscus crush",
-          "name_ar": "هيبسكس كراش",
-          "img": "85.jfif",
-          "price": "120.00",
+          "price": "110.00",
           "desc": ""
         },
         {
