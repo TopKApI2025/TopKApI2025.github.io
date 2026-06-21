@@ -851,34 +851,6 @@
           "img": "115.jfif",
           "price": "90.00",
           "desc": ""
-        },
-        {
-          "name_en": "Plain Waffle",
-          "name_ar": "وافل ميكس",
-          "img": "116.jfif",
-          "price": "200.00",
-          "desc": ""
-        },
-        {
-          "name_en": "Chocolate Waffle",
-          "name_ar": "وافل شيكولاته",
-          "img": "117.jfif",
-          "price": "120.00",
-          "desc": ""
-        },
-        {
-          "name_en": "Lotus Waffle",
-          "name_ar": "وافل لوتس",
-          "img": "118.jfif",
-          "price": "120.00",
-          "desc": ""
-        },
-        {
-          "name_en": "Fruit Waffle",
-          "name_ar": "وافل فواكه",
-          "img": "119.jfif",
-          "price": "150.00",
-          "desc": ""
         }
       ]
     }
