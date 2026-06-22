@@ -466,6 +466,13 @@
           "img": "62.jfif",
           "price": "120.00",
           "desc": ""
+        },
+        {
+          "name_en": "New Item",
+          "name_ar": "عنصر جديد",
+          "img": "",
+          "price": "0.00",
+          "desc": "Description here"
         }
       ]
     },
