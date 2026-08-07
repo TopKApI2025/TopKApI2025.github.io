@@ -853,20 +853,6 @@
           "desc": "Description here"
         }
       ]
-    },
-    {
-      "id": "cat-1786109297466",
-      "category_en": "New Category",
-      "category_ar": "",
-      "items": [
-        {
-          "name_en": "Example Item",
-          "name_ar": "",
-          "img": "",
-          "price": "5.00",
-          "desc": ""
-        }
-      ]
     }
   ]
 }
