@@ -205,7 +205,7 @@
           "name_en": "French Coffee",
           "name_ar": "قهوة فرنساوي",
           "img": "27.jfif",
-          "price": "80",
+          "price": "80.00",
           "desc": ""
         },
         {
@@ -233,7 +233,7 @@
           "name_en": "Double Espresso",
           "name_ar": "اسبرسو دبل",
           "img": "31.jfif",
-          "price": "70.00",
+          "price": "75.00",
           "desc": ""
         },
         {
