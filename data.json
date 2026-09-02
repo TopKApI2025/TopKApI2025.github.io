@@ -247,14 +247,14 @@
           "name_en": "Cappuccino",
           "name_ar": "كابتشينو",
           "img": "33.jfif",
-          "price": "100.00",
+          "price": "120.00",
           "desc": ""
         },
         {
           "name_en": "Latte",
           "name_ar": "لاتيه",
           "img": "34.jfif",
-          "price": "100.00",
+          "price": "120.00",
           "desc": ""
         },
         {
@@ -282,7 +282,7 @@
           "name_en": "Caramel Mikato",
           "name_ar": "كارميل ميكاتو",
           "img": "38.jfif",
-          "price": "110.00",
+          "price": "120.00",
           "desc": ""
         },
         {
