@@ -555,7 +555,7 @@
           "name_en": "Mango",
           "name_ar": "مانجو",
           "img": "73.jfif",
-          "price": "100.00",
+          "price": "110.00",
           "desc": ""
         },
         {
@@ -569,7 +569,7 @@
           "name_en": "mango kiwi",
           "name_ar": "مانجو كيوي",
           "img": "75.jfif",
-          "price": "120.00",
+          "price": "130.00",
           "desc": ""
         },
         {
@@ -814,7 +814,7 @@
           "name_en": "Redbull",
           "name_ar": "ريدبول",
           "img": "111.jfif",
-          "price": "95.00",
+          "price": "100.00",
           "desc": ""
         }
       ]
