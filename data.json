@@ -128,14 +128,14 @@
           "name_en": "Mojito",
           "name_ar": "موهيتو",
           "img": "17.jfif",
-          "price": "100.00",
+          "price": "110.00",
           "desc": ""
         },
         {
           "name_en": "Scotch Menit",
           "name_ar": "سكوتش مينت",
           "img": "18.jpg",
-          "price": "100.00",
+          "price": "110.00",
           "desc": ""
         },
         {
@@ -331,7 +331,7 @@
           "name_en": "Spanish Latte",
           "name_ar": "اسبانش لاتيه",
           "img": "45.jfif",
-          "price": "110.00",
+          "price": "120.00",
           "desc": ""
         }
       ]
