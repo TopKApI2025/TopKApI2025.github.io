@@ -205,14 +205,14 @@
           "name_en": "French Coffee",
           "name_ar": "قهوة فرنساوي",
           "img": "27.jfif",
-          "price": "70.00",
+          "price": "80",
           "desc": ""
         },
         {
           "name_en": "Hazelnut Coffee",
           "name_ar": "قهوة بندق",
           "img": "28.jfif",
-          "price": "75.00",
+          "price": "85.00",
           "desc": ""
         },
         {
