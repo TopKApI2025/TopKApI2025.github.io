@@ -842,14 +842,14 @@
           "name_en": "Cheesecake",
           "name_ar": "تشيز كيك",
           "img": "114.jfif",
-          "price": "85.00",
+          "price": "120.00",
           "desc": ""
         },
         {
           "name_en": "Cheesecake",
-          "name_ar": "تشيز كيك عيد ميلاد ",
+          "name_ar": "تشيز كيك عيد ميلاد",
           "img": "",
-          "price": "120.00",
+          "price": "150.00",
           "desc": "Description here"
         }
       ]
